@@ -1,0 +1,156 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Register - SEA Catering</title>
+            <link rel="stylesheet" href="style.css">
+            <style>
+                main {
+                    max-width: 500px;
+                    margin: 50px auto;
+                    padding: 20px;
+                    background: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+                form div {
+                    margin-bottom: 15px;
+                }
+                form label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+                form input[type="text"],
+                form input[type="email"],
+                form input[type="password"] {
+                    width: calc(100% - 22px); 
+                    padding: 10px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                }
+                form button {
+                    width: 100%;
+                    padding: 10px;
+                    background: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+                form button:hover {
+                    background: #45a049;
+                }
+                .message {
+                    margin-top: 15px;
+                    padding: 10px;
+                    border-radius: 4px;
+                    text-align: center;
+                }
+                .message.success {
+                    background-color: #d4edda;
+                    color: #155724;
+                    border-color: #c3e6cb;
+                }
+                .message.error {
+                    background-color: #f8d7da;
+                    color: #721c24;
+                    border-color: #f5c6cb;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>SEA Catering</h1>
+                <p class="slogan">“Healthy Meals, Anytime, Anywhere”</p>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu / Meal Plans</a></li>
+                        <li><a href="subscription.html">Subscription</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html" class="active">Register</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main>
+                <h2>Register for SEA Catering</h2>
+                <form id="registerForm">
+                    <div>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required minlength="8">
+                        <small>Min 8 characters, must include uppercase, lowercase, number, and special character.</small>
+                    </div>
+                    <button type="submit">Register</button>
+                    <div id="message" class="message" style="display: none;"></div>
+                </form>
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </main>
+            
+            <footer>
+                <p>&copy; 2025 SEA Catering. All rights reserved.</p>
+            </footer>
+
+            <script>
+                document.getElementById('registerForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const fullName = document.getElementById('fullName').value;
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    const messageDiv = document.getElementById('message');
+
+                    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+                    if (!passwordRegex.test(password)) {
+                        messageDiv.textContent = 'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.';
+                        messageDiv.className = 'message error';
+                        messageDiv.style.display = 'block';
+                        return;
+                    }
+
+                    try {
+                        const response = await fetch('http://localhost:5000/api/auth/register', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ fullName, email, password })
+                        });
+
+                        const data = await response.json();
+
+                        if (response.ok) {
+                            messageDiv.textContent = data.message;
+                            messageDiv.className = 'message success';
+                            messageDiv.style.display = 'block';
+                            setTimeout(() => {
+                                window.location.href = 'login.html';
+                            }, 2000);
+                        } else {
+                            messageDiv.textContent = data.message || 'Registration failed.';
+                            messageDiv.className = 'message error';
+                            messageDiv.style.display = 'block';
+                        }
+                    } catch (error) {
+                        console.error('Error during registration:', error);
+                        messageDiv.textContent = 'Network error. Please try again.';
+                        messageDiv.className = 'message error';
+                        messageDiv.style.display = 'block';
+                    }
+                });
+            </script>
+        </body>
+        </html>
+        

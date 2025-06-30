@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription - SEA Catering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SEA Catering</h1>
+        <p class="slogan">“Healthy Meals, Anytime, Anywhere”</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu / Meal Plans</a></li>
+                <li><a href="subscription.html" class="active">Subscription</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li> 
+                <li><a href="register.html">Register</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Subscribe to a Meal Plan</h2>
+        <form id="subscriptionForm" onsubmit="submitSubscription(event)">
+            <label for="fullName">Name*:</label>
+            <input type="text" id="fullName" required>
+
+            <label for="phoneNumber">Active Phone Number*:</label>
+            <input type="tel" id="phoneNumber" required>
+
+            <label for="planSelection">Plan Selection*:</label>
+            <select id="planSelection" required>
+                <option value="">Select a plan</option>
+                <option value="diet">Diet Plan - Rp30.000,00 per meal</option>
+                <option value="protein">Protein Plan - Rp40.000,00 per meal</option>
+                <option value="royal">Royal Plan - Rp60.000,00 per meal</option>
+            </select>
+
+            <label>Meal Type*:</label>
+            <div>
+                <input type="checkbox" id="breakfast" value="Breakfast" required>
+                <label for="breakfast">Breakfast</label>
+            </div>
+            <div>
+                <input type="checkbox" id="lunch" value="Lunch">
+                <label for="lunch">Lunch</label>
+            </div>
+            <div>
+                <input type="checkbox" id="dinner" value="Dinner">
+                <label for="dinner">Dinner</label>
+            </div>
+
+            <label>Delivery Days*:</label>
+            <div>
+                <input type="checkbox" id="monday" value="Monday">
+                <label for="monday">Monday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="tuesday" value="Tuesday">
+                <label for="tuesday">Tuesday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="wednesday" value="Wednesday">
+                <label for="wednesday">Wednesday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="thursday" value="Thursday">
+                <label for="thursday">Thursday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="friday" value="Friday">
+                <label for="friday">Friday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="saturday" value="Saturday">
+                <label for="saturday">Saturday</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sunday" value="Sunday">
+                <label for="sunday">Sunday</label>
+            </div>
+
+            <label for="allergies">Allergies:</label>
+            <textarea id="allergies" placeholder="List any allergies or dietary restrictions"></textarea>
+
+            <button type="submit">Subscribe</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 SEA Catering. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

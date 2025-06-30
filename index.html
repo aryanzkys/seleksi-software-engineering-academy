@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEA Catering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SEA Catering</h1>
+        <p class="slogan">“Healthy Meals, Anytime, Anywhere”</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="menu.html">Menu / Meal Plans</a></li>
+                <li><a href="subscription.html">Subscription</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li> 
+                <li><a href="register.html">Register</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="introduction">
+            <h2>Welcome to SEA Catering!</h2>
+            <p>
+                At SEA Catering, we provide customizable healthy meal plans delivered right to your doorstep across Indonesia. 
+                Our mission is to make healthy eating accessible and convenient for everyone, no matter where you are.
+            </p>
+        </section>
+        
+        <section id="features">
+            <h2>Our Key Features</h2>
+            <ul>
+                <li>Meal Customization: Tailor your meals to fit your dietary preferences.</li>
+                <li>Delivery to Major Cities: We deliver to cities across Indonesia.</li>
+                <li>Detailed Nutritional Information: Know exactly what you're eating.</li>
+            </ul>
+        </section>
+        
+        <section id="testimonials">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p>"The meals are delicious and healthy! I love the customization options!"</p>
+                    <p><strong>- Sarah</strong> | Rating: ★★★★★</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Great service and fast delivery. Highly recommend!"</p>
+                    <p><strong>- John</strong> | Rating: ★★★★☆</p>
+                </div>
+                <div class="testimonial">
+                    <p>"I appreciate the detailed nutritional information provided with each meal."</p>
+                    <p><strong>- Lisa</strong> | Rating: ★★★★★</p>
+                </div>
+            </div>
+            <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
+            <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+
+            <h3>Submit Your Testimonial</h3>
+            <form id="testimonialForm" onsubmit="submitTestimonial(event)">
+                <input type="text" id="customerName" placeholder="Your Name" required>
+                <textarea id="reviewMessage" placeholder="Your Review" required></textarea>
+                <label for="rating">Rating:</label>
+                <select id="rating" required>
+                    <option value="5">5 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="2">2 Stars</option>
+                    <option value="1">1 Star</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Manager:</strong> Brian</p>
+            <p><strong>Phone Number:</strong> 08123456789</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 SEA Catering. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

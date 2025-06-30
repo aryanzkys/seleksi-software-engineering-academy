@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu / Meal Plans - SEA Catering</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SEA Catering</h1>
+        <p class="slogan">“Healthy Meals, Anytime, Anywhere”</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu / Meal Plans</a></li>
+                <li><a href="subscription.html">Subscription</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li> 
+                <li><a href="register.html">Register</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Our Meal Plans</h2>
+        <div class="meal-plans">
+            <div class="meal-card">
+                <h3>Healthy Salad</h3>
+                <p>Price: $10</p>
+                <p>A fresh mix of greens, vegetables, and a choice of dressing.</p>
+                <button class="details-btn" onclick="openModal('saladModal')">See More Details</button>
+            </div>
+            <div class="meal-card">
+                <h3>Grilled Chicken Bowl</h3>
+                <p>Price: $15</p>
+                <p>Grilled chicken served with brown rice and steamed vegetables.</p>
+                <button class="details-btn" onclick="openModal('chickenModal')">See More Details</button>
+            </div>
+            <div class="meal-card">
+                <h3>Vegan Buddha Bowl</h3>
+                <p>Price: $12</p>
+                <p>A nutritious bowl filled with quinoa, chickpeas, and seasonal veggies.</p>
+                <button class="details-btn" onclick="openModal('buddhaModal')">See More Details</button>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 SEA Catering. All rights reserved.</p>
+    </footer>
+
+    <div id="saladModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('saladModal')">&times;</span>
+            <h2>Healthy Salad</h2>
+            <p>Price: $10</p>
+            <p>A fresh mix of greens, vegetables, and a choice of dressing. Perfect for a light meal or a side dish.</p>
+        </div>
+    </div>
+
+    <div id="chickenModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('chickenModal')">&times;</span>
+            <h2>Grilled Chicken Bowl</h2>
+            <p>Price: $15</p>
+            <p>Grilled chicken served with brown rice and steamed vegetables. A hearty and healthy option for lunch or dinner.</p>
+        </div>
+    </div>
+
+    <div id="buddhaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('buddhaModal')">&times;</span>
+            <h2>Vegan Buddha Bowl</h2>
+            <p>Price: $12</p>
+            <p>A nutritious bowl filled with quinoa, chickpeas, and seasonal veggies. Ideal for a filling vegan meal.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
