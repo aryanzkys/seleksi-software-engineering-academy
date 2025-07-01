@@ -1,48 +1,43 @@
 # SEA Catering
 
-SEA Catering adalah aplikasi web yang dirancang untuk mengelola layanan katering. Aplikasi ini memungkinkan pengguna untuk melakukan pemesanan, mengelola menu, dan mengatur akun admin.
+SEA Catering is a web application designed to manage catering services. This application allows users to place orders, manage menus, and set up admin accounts.
 
-## Daftar Isi
+## Table of Contents
 
-- [Prasyarat](#prasyarat)
-- [Instalasi](#instalasi)
-- [Menjalankan Aplikasi](#menjalankan-aplikasi)
-- [Variabel Lingkungan](#variabel-lingkungan)
-- [Fungsi Admin](#fungsi-admin)
-- [Kesimpulan](#kesimpulan)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
 
-## Prasyarat
+## Prerequisites
 
-Sebelum memulai, pastikan Anda memiliki hal-hal berikut:
+Before you begin, ensure you have the following:
 
-- [Node.js](https://nodejs.org/) (versi 14 atau lebih baru)
-- [npm](https://www.npmjs.com/) (biasanya terinstal bersama Node.js)
-- Database (PostgreSQL, MySQL, atau yang lainnya sesuai kebutuhan)
+- [Node.js](https://nodejs.org/) (version 14 or newer)
+- [npm](https://www.npmjs.com/) (usually installed with Node.js)
+- A database (PostgreSQL, MySQL, or others as needed)
 
-## Instalasi
+## Installation
 
-1. **Clone Repository**
-   - Gunakan perintah berikut untuk meng-clone repository:
+1. **Clone the Repository**
+   - Use the following command to clone the repository:
      ```bash
      git clone https://github.com/aryanzkys/seleksi-software-engineering-academy.git
      ```
 
-2. **Navigasi ke Direktori Proyek**
-   - Masuk ke direktori proyek:
+2. **Navigate to the Project Directory**
+   - Change into the project directory:
      ```bash
      cd seleksi-software-engineering-academy
      ```
 
-3. **Instal Dependensi**
-   - Pastikan Anda berada di dalam direktori proyek, lalu instal dependensi yang diperlukan:
+3. **Install Dependencies**
+   - Make sure you are in the project directory, then install the required dependencies:
      ```bash
      npm install
      ```
 
-## Menjalankan Aplikasi
+## Running the Application
 
-- Untuk memulai aplikasi, gunakan perintah berikut:
+- To start the application, use the following command:
   ```bash
   npm start
-
-  
